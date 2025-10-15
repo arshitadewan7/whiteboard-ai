@@ -3,32 +3,15 @@
 import type React from "react"
 
 import { useMemo, useState } from "react"
-import { ImageIcon, Loader2, Orbit, Sparkles, Upload, Waves } from "lucide-react"
+import { ImageIcon, Loader2, Sparkles, Upload, Waves } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { Hero } from "@/components/Hero"
+import { HowItWorks } from "@/components/HowItWorks"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { OrbField } from "@/components/visuals/orb-field"
-
-const featureHighlights = [
-  {
-    title: "Vision-to-Structure",
-    description: "Detect handwriting lanes, sticky notes, and sketches, then rebuild them as tidy digital blocks.",
-    icon: Sparkles,
-  },
-  {
-    title: "Semantic Signal",
-    description: "Auto-tag action items, owners, and timelines so teams can mobilize instantly.",
-    icon: Orbit,
-  },
-  {
-    title: "Playable Memory",
-    description: "Export sharable summaries and motion transcripts that replay the board’s story.",
-    icon: Waves,
-  },
-] as const
 
 export default function WhiteboardAI() {
   const [file, setFile] = useState<File | null>(null)
@@ -126,55 +109,10 @@ export default function WhiteboardAI() {
       <main className="relative z-10 flex flex-col">
         <Hero />
 
+        <HowItWorks />
+
         <section className="container mx-auto px-6 pb-16 lg:pb-24">
           <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_minmax(0,0.95fr)]">
-            <div className="space-y-8 text-left text-[#ffe7da]">
-              <div className="inline-flex items-center gap-3 rounded-full border border-[#ffe7da]/30 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.32em] text-[#ffe7da]/80 shadow-[0_18px_40px_rgba(56,25,50,0.45)] backdrop-blur-2xl">
-                <span className="relative inline-flex size-2 rounded-full bg-[#ffd8ff] glow-dot"></span>
-                Workflow Highlights
-              </div>
-
-              <h2 className="text-balance text-3xl font-semibold leading-tight text-[#fff3e6] sm:text-4xl lg:text-[2.6rem]">
-                Everything you need to digitize analog thinking in minutes.
-              </h2>
-
-              <p className="max-w-xl text-lg text-[#ffe7da]/85">
-                Whiteboard.AI orchestrates handwriting capture, spatial reasoning, and language models to rebuild your
-                wall of ideas as an organized playbook you can edit, share, and ship.
-              </p>
-
-              <div className="flex flex-wrap items-center gap-4 text-sm font-medium text-[#ffe7da]/70">
-                <div className="flex items-center gap-2 rounded-full bg-[#fff3e6]/15 px-4 py-2">
-                  <span className="size-2 rounded-full bg-[#ffd6ff]"></span>
-                  Live kinetic typography
-                </div>
-                <div className="flex items-center gap-2 rounded-full bg-[#fff3e6]/15 px-4 py-2">
-                  <span className="size-2 rounded-full bg-[#ffd09d]"></span>
-                  Glassmorphism workflow hub
-                </div>
-                <div className="flex items-center gap-2 rounded-full bg-[#fff3e6]/15 px-4 py-2">
-                  <span className="size-2 rounded-full bg-[#f5b0ff]"></span>
-                  Three.js orbit scene
-                </div>
-              </div>
-
-              <div className="grid gap-4 sm:grid-cols-2">
-                {featureHighlights.map(({ title, description, icon: Icon }) => (
-                  <Card
-                    key={title}
-                    className="glass-panel relative overflow-hidden rounded-3xl border-transparent px-6 py-6 text-left text-[#ffe7da]"
-                  >
-                    <div className="absolute -right-8 -top-8 size-24 rounded-full bg-[#ffd9ff]/15 blur-3xl"></div>
-                    <div className="flex size-10 items-center justify-center rounded-2xl bg-[#fff3e6]/15 text-[#ffe7da] shadow-inner">
-                      <Icon className="size-5" />
-                    </div>
-                    <h3 className="mt-5 text-lg font-semibold">{title}</h3>
-                    <p className="mt-2 text-sm text-[#ffe7da]/80">{description}</p>
-                  </Card>
-                ))}
-              </div>
-            </div>
-
             <Card
               id="upload"
               className="glass-panel relative overflow-hidden rounded-[32px] border-transparent px-8 py-10 text-[#ffe7da] shadow-[0_32px_85px_rgba(0,0,0,0.35)]"
