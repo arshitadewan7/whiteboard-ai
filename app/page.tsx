@@ -104,6 +104,7 @@ export default function WhiteboardAI() {
       <div className="bg-plum-stage absolute inset-0"></div>
       <div className="aurora-veil absolute inset-0"></div>
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_15%,rgba(255,243,230,0.28),transparent_52%),radial-gradient(circle_at_78%_12%,rgba(255,196,255,0.32),transparent_58%),radial-gradient(circle_at_50%_80%,rgba(255,243,230,0.22),transparent_62%)]"></div>
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[140vh] bg-gradient-to-b from-transparent via-[#2a1423]/70 to-[#11060f]" aria-hidden="true"></div>
       <OrbField />
 
       <main className="relative z-10 flex flex-col">
@@ -193,8 +194,8 @@ export default function WhiteboardAI() {
         <section
           id="demo"
           className={cn(
-            "container mx-auto scroll-mt-32 px-6 pt-20 text-[#ffe7da] transition-opacity duration-700",
-            result && preview ? "pb-24 opacity-100" : "pb-0 opacity-0 motion-safe:duration-300",
+            "container mx-auto min-h-[40vh] scroll-mt-32 px-6 pb-24 pt-20 text-[#ffe7da] transition-opacity duration-700",
+            result && preview ? "opacity-100" : "opacity-0 motion-safe:duration-300 pointer-events-none",
           )}
           aria-live="polite"
         >
