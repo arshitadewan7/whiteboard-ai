@@ -100,7 +100,7 @@ export default function WhiteboardAI() {
   )
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-[#381932]">
+    <div className="relative min-h-screen bg-[#381932]">
       <div className="bg-plum-stage absolute inset-0"></div>
       <div className="aurora-veil absolute inset-0"></div>
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_15%,rgba(255,243,230,0.28),transparent_52%),radial-gradient(circle_at_78%_12%,rgba(255,196,255,0.32),transparent_58%),radial-gradient(circle_at_50%_80%,rgba(255,243,230,0.22),transparent_62%)]"></div>
@@ -111,10 +111,12 @@ export default function WhiteboardAI() {
 
         <HowItWorks />
 
-        <section className="container mx-auto px-6 pb-16 lg:pb-24">
+        <section
+          id="upload"
+          className="container mx-auto scroll-mt-32 px-6 pb-16 pt-12 lg:pb-24"
+        >
           <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_minmax(0,0.95fr)]">
             <Card
-              id="upload"
               className="glass-panel relative overflow-hidden rounded-[32px] border-transparent px-8 py-10 text-[#ffe7da] shadow-[0_32px_85px_rgba(0,0,0,0.35)]"
             >
               <div className="pointer-events-none absolute -right-20 top-10 h-48 w-48 rounded-full bg-[#ffd9ff]/25 blur-3xl"></div>
@@ -191,7 +193,7 @@ export default function WhiteboardAI() {
         <section
           id="demo"
           className={cn(
-            "container mx-auto px-6 text-[#ffe7da] transition-opacity duration-700",
+            "container mx-auto scroll-mt-32 px-6 pt-20 text-[#ffe7da] transition-opacity duration-700",
             result && preview ? "pb-24 opacity-100" : "pb-0 opacity-0 motion-safe:duration-300",
           )}
           aria-live="polite"
